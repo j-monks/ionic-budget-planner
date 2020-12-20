@@ -6,7 +6,7 @@ const addBtn = document.querySelector("#btn-add");
 addBtn.addEventListener("click", () => {
   const enteredExpense = expenseInput.value;
   const enteredAmount = amountInput.value;
-  // guards so you can't add an expense if nothing is typed/amount is zero
+  // validation guards so you can't add an expense if nothing is typed/amount is zero
   if (
     enteredExpense.trim().length <= 0 ||
     enteredAmount <= 0 ||
