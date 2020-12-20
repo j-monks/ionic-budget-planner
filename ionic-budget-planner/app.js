@@ -4,6 +4,11 @@ const clearBtn = document.querySelector("#btn-clear");
 const addBtn = document.querySelector("#btn-add");
 const expensesList = document.querySelector("#expenses-list")
 
+const clear = () => {
+  expenseInput.value = "";
+  amountInput.value = "";
+}
+
 addBtn.addEventListener("click", () => {
   const enteredExpense = expenseInput.value;
   const enteredAmount = amountInput.value;
@@ -19,4 +24,9 @@ addBtn.addEventListener("click", () => {
   newItem.textContent = enteredExpense + ": £" + enteredAmount;
 
   expensesList.appendChild(newItem);
+
+  clear();
 });
+
+clearBtn.addEventListener("click", clear);
+
