@@ -3,6 +3,9 @@ const amountInput = document.querySelector("#input-amount");
 const clearBtn = document.querySelector("#btn-clear");
 const addBtn = document.querySelector("#btn-add");
 const expensesList = document.querySelector("#expenses-list")
+const totalExpensesOutput = document.querySelector("#total-expenses");
+
+let totalExpenses = 0;
 
 const clear = () => {
   expenseInput.value = "";
@@ -24,7 +27,10 @@ addBtn.addEventListener("click", () => {
   newItem.textContent = enteredExpense + ": £" + enteredAmount;
 
   expensesList.appendChild(newItem);
-
+  // '+' in front of the entered amount variable changes the value from input element when its fetched (string)
+  // which is default, to a number
+  totalExpenses += +enteredAmount;
+  totalExpensesOutput.textContent = totalExpenses;
   clear();
 });
 
